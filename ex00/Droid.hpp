@@ -14,6 +14,8 @@ constexpr size_t DEFAULT_ENERGY = 50;
 constexpr size_t DEFAULT_ATTACK = 25;
 constexpr size_t DEFAULT_TOUGHNESS = 15;
 
+constexpr size_t MAX_ENERGY = 100;
+
 class Droid {
    public:
     Droid(std::string serial = "");

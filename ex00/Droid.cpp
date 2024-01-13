@@ -47,7 +47,7 @@ bool Droid::operator==(const Droid &other) const {
 bool Droid::operator!=(const Droid &other) const { return !(*this == other); }
 
 size_t &Droid::operator<<(size_t &battery) {
-    const size_t needed = std::min(100 - _energy, battery);
+    const size_t needed = std::min(MAX_ENERGY - _energy, battery);
     setEnergy(getEnergy() + needed);
     battery -= needed;
     return battery;
@@ -71,7 +71,7 @@ size_t Droid::getToughness() const { return _toughness; }
 
 void Droid::setId(const std::string &id) { _id = id; }
 
-void Droid::setEnergy(size_t energy) { _energy = energy; }
+void Droid::setEnergy(size_t energy) { _energy = std::min(MAX_ENERGY, energy); }
 
 void Droid::setStatus(std::string *status) {
     delete _status;
