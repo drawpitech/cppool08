@@ -18,7 +18,8 @@ constexpr size_t DEFAULT_TOUGHNESS = 15;
 
 constexpr size_t TASK_ENERGY = 10;
 
-class Droid {
+class Droid
+{
    public:
     Droid(std::string serial);
     Droid(const Droid &other);
